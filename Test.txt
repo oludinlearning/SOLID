@@ -4,3 +4,4 @@ git add README.md
 git commit -m "first commit"
 git remote add origin https://github.com/oludinlearning/SOLID.git
 git push -u origin master
+настройка доступа к веткам https://habr.com/ru/post/266381/
