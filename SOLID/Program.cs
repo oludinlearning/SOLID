@@ -16,7 +16,11 @@ namespace SOLID
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+
+            MainView view = new MainView();
+            Model model = new Model();
+            Presenter presernter = new Presenter(view, model);
+            Application.Run(view);
         }
     }
 }

@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SOLID
+namespace SOLID.Entities
 {
-    class View
+    class Student
     {
     }
 }

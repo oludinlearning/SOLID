@@ -1,0 +1,10 @@
+C:\Users\Алексей\Documents\Visual Studio 2019\Projects\SOLID\SOLID\SOLID\bin\Debug\SOLID.exe.config
+C:\Users\Алексей\Documents\Visual Studio 2019\Projects\SOLID\SOLID\SOLID\bin\Debug\SOLID.exe
+C:\Users\Алексей\Documents\Visual Studio 2019\Projects\SOLID\SOLID\SOLID\bin\Debug\SOLID.pdb
+C:\Users\Алексей\Documents\Visual Studio 2019\Projects\SOLID\SOLID\SOLID\obj\Debug\SOLID.csprojAssemblyReference.cache
+C:\Users\Алексей\Documents\Visual Studio 2019\Projects\SOLID\SOLID\SOLID\obj\Debug\SOLID.Properties.Resources.resources
+C:\Users\Алексей\Documents\Visual Studio 2019\Projects\SOLID\SOLID\SOLID\obj\Debug\SOLID.csproj.GenerateResource.cache
+C:\Users\Алексей\Documents\Visual Studio 2019\Projects\SOLID\SOLID\SOLID\obj\Debug\SOLID.csproj.CoreCompileInputs.cache
+C:\Users\Алексей\Documents\Visual Studio 2019\Projects\SOLID\SOLID\SOLID\obj\Debug\SOLID.exe
+C:\Users\Алексей\Documents\Visual Studio 2019\Projects\SOLID\SOLID\SOLID\obj\Debug\SOLID.pdb
+C:\Users\Алексей\Documents\Visual Studio 2019\Projects\SOLID\SOLID\SOLID\obj\Debug\SOLID.MainView.resources
