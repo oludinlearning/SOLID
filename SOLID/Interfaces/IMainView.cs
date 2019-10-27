@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SOLID
 {
-    class Model : IModel
+    interface IMainView
     {
     }
 }
