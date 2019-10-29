@@ -16,6 +16,8 @@ namespace SOLID.Entities
              great = 5
         }
 
+        protected int id;
+        public int ID { get { return id; } set { id = value; } }
         protected gpa gradepointaverage;
         public gpa GradePointAverage { get { return gradepointaverage; } set { gradepointaverage = value; } }
         protected Student student;

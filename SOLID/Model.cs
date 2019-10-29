@@ -47,5 +47,10 @@ namespace SOLID
         {
 
         }
+
+        public void DeleteGPA(int id)
+        {
+
+        }
     }
 }
