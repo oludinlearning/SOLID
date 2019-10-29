@@ -20,6 +20,11 @@ namespace SOLID.Entities
         protected Faculty faculty;
         public Faculty Faculty { get { return faculty; } set { faculty = value; } }
 
+        public string GetStudentFullName()
+        {
+            string fullname = Surname + ' ' + Name + ' ' + Patronimic;
+            return fullname;
+        }
         //protected University university;
         //public University University { get { return university; } set { university = value; } }
     }

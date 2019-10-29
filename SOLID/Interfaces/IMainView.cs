@@ -9,7 +9,7 @@ namespace SOLID
 {
     interface IMainView
     {
-        void ShowDataGridView_GPA(int page, int rowcount);
+        //void ShowDataGridView_GPA(int page, int rowcount);
         void SetDataGridViewRow_GPA(int rownumber, GPA gpa);
     }
 }

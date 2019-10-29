@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainView));
-            this.dataGridView_GPA = new System.Windows.Forms.DataGridView();
+            this.DataGridView_GPA = new System.Windows.Forms.DataGridView();
             this.University = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Faculty = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.StudentFullName = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -47,30 +47,30 @@
             this.toolStripButton_EditRecord = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton_DeleteRecord = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_GPA)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DataGridView_GPA)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // dataGridView_GPA
+            // DataGridView_GPA
             // 
-            this.dataGridView_GPA.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView_GPA.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView_GPA.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.DataGridView_GPA.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.DataGridView_GPA.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DataGridView_GPA.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.University,
             this.Faculty,
             this.StudentFullName,
             this.Subject,
             this.GPA});
-            this.dataGridView_GPA.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView_GPA.Location = new System.Drawing.Point(0, 0);
-            this.dataGridView_GPA.Name = "dataGridView_GPA";
-            this.dataGridView_GPA.RowHeadersWidth = 51;
-            this.dataGridView_GPA.RowTemplate.Height = 24;
-            this.dataGridView_GPA.Size = new System.Drawing.Size(1119, 525);
-            this.dataGridView_GPA.TabIndex = 0;
+            this.DataGridView_GPA.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.DataGridView_GPA.Location = new System.Drawing.Point(0, 0);
+            this.DataGridView_GPA.Name = "DataGridView_GPA";
+            this.DataGridView_GPA.RowHeadersWidth = 51;
+            this.DataGridView_GPA.RowTemplate.Height = 24;
+            this.DataGridView_GPA.Size = new System.Drawing.Size(1119, 525);
+            this.DataGridView_GPA.TabIndex = 0;
             // 
             // University
             // 
@@ -155,7 +155,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.AutoSize = true;
-            this.panel1.Controls.Add(this.dataGridView_GPA);
+            this.panel1.Controls.Add(this.DataGridView_GPA);
             this.panel1.Location = new System.Drawing.Point(12, 56);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1119, 525);
@@ -230,7 +230,7 @@
             this.Name = "MainView";
             this.Text = "Вузы";
             this.Load += new System.EventHandler(this.MainView_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_GPA)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DataGridView_GPA)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.panel1.ResumeLayout(false);
@@ -244,7 +244,7 @@
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dataGridView_GPA;
+        private System.Windows.Forms.DataGridView DataGridView_GPA;
         private System.Windows.Forms.DataGridViewTextBoxColumn University;
         private System.Windows.Forms.DataGridViewTextBoxColumn Faculty;
         private System.Windows.Forms.DataGridViewTextBoxColumn StudentFullName;

@@ -10,5 +10,6 @@ namespace SOLID
     interface IModel
     {
         GPA GetGPA(int id);
+        void SetGPA(int id, GPA gpa);
     }
 }

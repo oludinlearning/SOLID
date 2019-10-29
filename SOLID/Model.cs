@@ -41,5 +41,11 @@ namespace SOLID
 
             return gpa;
         }
+
+        // SetGPA записывает данные о средней оценке в базу данных
+        public void SetGPA(int id, GPA gpa)
+        {
+
+        }
     }
 }
