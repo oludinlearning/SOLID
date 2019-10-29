@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SOLID.Entities
 {
-    class Faculty
+    public class Faculty
     {
         protected string name;
         public string Name { get { return name; } set { name = value; } }

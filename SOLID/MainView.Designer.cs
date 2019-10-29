@@ -229,6 +229,7 @@
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "MainView";
             this.Text = "Вузы";
+            this.Load += new System.EventHandler(this.MainView_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_GPA)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
