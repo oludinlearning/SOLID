@@ -8,5 +8,10 @@ namespace SOLID.Entities
 {
     class Faculty
     {
+        protected string name;
+        public string Name { get { return name; } set { name = value; } }
+
+        protected University university;
+        public University University { get { return university; } set { university = value; } }
     }
 }

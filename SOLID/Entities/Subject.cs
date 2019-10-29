@@ -6,7 +6,12 @@ using System.Threading.Tasks;
 
 namespace SOLID.Entities
 {
-    class Subject //Предмет
+    public class Subject //Предмет
     {
+        protected string name;
+        public string Name { get { return name; } set { name = value; } }
+        
+        //protected Faculty faculty;
+        //public Faculty Faculty { get { return faculty; } set { faculty = value; } }
     }
 }

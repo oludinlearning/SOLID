@@ -14,6 +14,7 @@ namespace SOLID
         {
             IMainView = _IView;
             IModel = _IModel;
+
         }
     }
 }
