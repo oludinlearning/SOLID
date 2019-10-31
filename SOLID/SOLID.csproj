@@ -68,6 +68,7 @@
     <Compile Include="Entities\University.cs" />
     <Compile Include="Interfaces\IModel.cs" />
     <Compile Include="Interfaces\IMainView.cs" />
+    <Compile Include="Interfaces\IReadDB.cs" />
     <Compile Include="MainView.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -75,6 +76,7 @@
       <DependentUpon>MainView.cs</DependentUpon>
     </Compile>
     <Compile Include="Models\Model.cs" />
+    <Compile Include="Models\ReadDB.cs" />
     <Compile Include="Presenter.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
