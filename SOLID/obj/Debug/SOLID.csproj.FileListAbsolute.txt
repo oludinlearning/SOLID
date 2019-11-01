@@ -8,3 +8,6 @@ C:\Users\Алексей\Documents\Visual Studio 2019\Projects\SOLID\SOLID\SOLID\
 C:\Users\Алексей\Documents\Visual Studio 2019\Projects\SOLID\SOLID\SOLID\obj\Debug\SOLID.exe
 C:\Users\Алексей\Documents\Visual Studio 2019\Projects\SOLID\SOLID\SOLID\obj\Debug\SOLID.pdb
 C:\Users\Алексей\Documents\Visual Studio 2019\Projects\SOLID\SOLID\SOLID\obj\Debug\SOLID.MainView.resources
+S:\PortableGit\SOLID\SOLID\bin\Debug\SOLID.exe.config
+S:\PortableGit\SOLID\SOLID\obj\Debug\SOLID.exe
+S:\PortableGit\SOLID\SOLID\obj\Debug\SOLID.pdb
