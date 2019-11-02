@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using SOLID.Models;
 
 namespace SOLID
 {
@@ -12,6 +13,7 @@ namespace SOLID
         IMainView IMainView;
         public Presenter(IMainView _IView, IModel _IModel)
         {
+            Model Mod = new Model(new ReadDB);
             IMainView = _IView;
             IModel = _IModel;
         }

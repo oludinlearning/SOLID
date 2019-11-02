@@ -8,9 +8,5 @@ namespace SOLID
 {
     interface IModel
     {
-        void AddStudent(List<object> studentList);
-        void GetStudents();
-        void ChangeDB();
-
     }
 }

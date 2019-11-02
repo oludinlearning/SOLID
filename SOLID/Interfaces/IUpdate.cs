@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace SOLID.Interfaces
 {
-    public interface IReadDB
+    interface IUpdate
     {
-        void ReadStudent(string connectionString);
+        void UpdateStudent();
     }
 }

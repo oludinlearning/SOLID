@@ -67,15 +67,18 @@
     <Compile Include="Entities\Student.cs" />
     <Compile Include="Entities\Subject.cs" />
     <Compile Include="Entities\University.cs" />
+    <Compile Include="Interfaces\IAddStudent.cs" />
     <Compile Include="Interfaces\IModel.cs" />
     <Compile Include="Interfaces\IMainView.cs" />
     <Compile Include="Interfaces\IReadDB.cs" />
+    <Compile Include="Interfaces\IUpdate.cs" />
     <Compile Include="MainView.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="MainView.Designer.cs">
       <DependentUpon>MainView.cs</DependentUpon>
     </Compile>
+    <Compile Include="Models\AddStudent.cs" />
     <Compile Include="Models\Model.cs" />
     <Compile Include="Models\ReadDB.cs" />
     <Compile Include="Presenter.cs" />
