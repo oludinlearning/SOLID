@@ -44,6 +44,7 @@ namespace SOLID
 
             subject.Name = "История древнего мира";
 
+            gpa.GradePointAverage = 0;
             gpa.Student = student;
             gpa.Student.Faculty = faculty;
             gpa.Subject = subject;
@@ -53,7 +54,13 @@ namespace SOLID
 
             for (int i = 0; i < DBRecordCount; i++)
             {
-                DB.Add(gpa);
+                //gpa.ID = i;
+                DB.Add(new GPA {
+                    ID = i,
+                    GradePointAverage = 0,
+                    Student = student,
+                    Subject = subject,                    
+                });
             }            
         }
         

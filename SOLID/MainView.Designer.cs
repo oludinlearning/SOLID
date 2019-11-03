@@ -30,11 +30,6 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainView));
             this.DataGridView_GPA = new System.Windows.Forms.DataGridView();
-            this.University = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Faculty = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.StudentFullName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Subject = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.GPA = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.FileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.EditToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -49,6 +44,14 @@
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
             this.OutputBy = new System.Windows.Forms.ToolStripComboBox();
+            this.label_Page = new System.Windows.Forms.Label();
+            this.label_PageNumber = new System.Windows.Forms.Label();
+            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.University = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Faculty = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.StudentFullName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Subject = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.GPA = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.DataGridView_GPA)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -61,6 +64,7 @@
             this.DataGridView_GPA.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.DataGridView_GPA.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DataGridView_GPA.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ID,
             this.University,
             this.Faculty,
             this.StudentFullName,
@@ -75,41 +79,6 @@
             this.DataGridView_GPA.RowTemplate.Height = 24;
             this.DataGridView_GPA.Size = new System.Drawing.Size(1119, 525);
             this.DataGridView_GPA.TabIndex = 0;
-            // 
-            // University
-            // 
-            this.University.HeaderText = "Вуз";
-            this.University.MinimumWidth = 6;
-            this.University.Name = "University";
-            this.University.ReadOnly = true;
-            // 
-            // Faculty
-            // 
-            this.Faculty.HeaderText = "Факультет";
-            this.Faculty.MinimumWidth = 6;
-            this.Faculty.Name = "Faculty";
-            this.Faculty.ReadOnly = true;
-            // 
-            // StudentFullName
-            // 
-            this.StudentFullName.HeaderText = "ФИО студента";
-            this.StudentFullName.MinimumWidth = 6;
-            this.StudentFullName.Name = "StudentFullName";
-            this.StudentFullName.ReadOnly = true;
-            // 
-            // Subject
-            // 
-            this.Subject.HeaderText = "Предмет";
-            this.Subject.MinimumWidth = 6;
-            this.Subject.Name = "Subject";
-            this.Subject.ReadOnly = true;
-            // 
-            // GPA
-            // 
-            this.GPA.HeaderText = "Средняя оценка";
-            this.GPA.MinimumWidth = 6;
-            this.GPA.Name = "GPA";
-            this.GPA.ReadOnly = true;
             // 
             // menuStrip1
             // 
@@ -143,6 +112,7 @@
             this.button_Next.TabIndex = 2;
             this.button_Next.Text = "Следующая";
             this.button_Next.UseVisualStyleBackColor = true;
+            this.button_Next.Click += new System.EventHandler(this.Button_Next_Click);
             // 
             // button_Previous
             // 
@@ -152,6 +122,7 @@
             this.button_Previous.TabIndex = 3;
             this.button_Previous.Text = "Предыдущая";
             this.button_Previous.UseVisualStyleBackColor = true;
+            this.button_Previous.Click += new System.EventHandler(this.Button_Previous_Click);
             // 
             // panel1
             // 
@@ -240,11 +211,73 @@
             this.OutputBy.Size = new System.Drawing.Size(50, 28);
             this.OutputBy.SelectedIndexChanged += new System.EventHandler(this.OutputBy_SelectedIndexChanged);
             // 
+            // label_Page
+            // 
+            this.label_Page.AutoSize = true;
+            this.label_Page.Location = new System.Drawing.Point(12, 607);
+            this.label_Page.Name = "label_Page";
+            this.label_Page.Size = new System.Drawing.Size(76, 17);
+            this.label_Page.TabIndex = 7;
+            this.label_Page.Text = "Страница ";
+            // 
+            // label_PageNumber
+            // 
+            this.label_PageNumber.AutoSize = true;
+            this.label_PageNumber.Location = new System.Drawing.Point(95, 607);
+            this.label_PageNumber.Name = "label_PageNumber";
+            this.label_PageNumber.Size = new System.Drawing.Size(16, 17);
+            this.label_PageNumber.TabIndex = 8;
+            this.label_PageNumber.Text = "1";
+            // 
+            // ID
+            // 
+            this.ID.HeaderText = "ID";
+            this.ID.MinimumWidth = 6;
+            this.ID.Name = "ID";
+            this.ID.ReadOnly = true;
+            // 
+            // University
+            // 
+            this.University.HeaderText = "Вуз";
+            this.University.MinimumWidth = 6;
+            this.University.Name = "University";
+            this.University.ReadOnly = true;
+            // 
+            // Faculty
+            // 
+            this.Faculty.HeaderText = "Факультет";
+            this.Faculty.MinimumWidth = 6;
+            this.Faculty.Name = "Faculty";
+            this.Faculty.ReadOnly = true;
+            // 
+            // StudentFullName
+            // 
+            this.StudentFullName.HeaderText = "ФИО студента";
+            this.StudentFullName.MinimumWidth = 6;
+            this.StudentFullName.Name = "StudentFullName";
+            this.StudentFullName.ReadOnly = true;
+            // 
+            // Subject
+            // 
+            this.Subject.HeaderText = "Предмет";
+            this.Subject.MinimumWidth = 6;
+            this.Subject.Name = "Subject";
+            this.Subject.ReadOnly = true;
+            // 
+            // GPA
+            // 
+            this.GPA.HeaderText = "Средняя оценка";
+            this.GPA.MinimumWidth = 6;
+            this.GPA.Name = "GPA";
+            this.GPA.ReadOnly = true;
+            // 
             // MainView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1143, 630);
+            this.Controls.Add(this.label_PageNumber);
+            this.Controls.Add(this.label_Page);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
@@ -267,11 +300,6 @@
         #endregion
 
         private System.Windows.Forms.DataGridView DataGridView_GPA;
-        private System.Windows.Forms.DataGridViewTextBoxColumn University;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Faculty;
-        private System.Windows.Forms.DataGridViewTextBoxColumn StudentFullName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Subject;
-        private System.Windows.Forms.DataGridViewTextBoxColumn GPA;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem FileToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem EditToolStripMenuItem;
@@ -286,6 +314,14 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripLabel toolStripLabel1;
         private System.Windows.Forms.ToolStripComboBox OutputBy;
+        private System.Windows.Forms.Label label_Page;
+        private System.Windows.Forms.Label label_PageNumber;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn University;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Faculty;
+        private System.Windows.Forms.DataGridViewTextBoxColumn StudentFullName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Subject;
+        private System.Windows.Forms.DataGridViewTextBoxColumn GPA;
     }
 }
 

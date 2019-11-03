@@ -11,6 +11,7 @@ namespace SOLID
     {
         //void ShowDataGridView_GPA(int page, int rowcount);
         event MainView.RowCountChanged onRowCountChanged;
+        event MainView.PrevNextClicked onPageChanged;
         void SetDataGridViewRow_GPA(int rownumber, GPA gpa);
         int GetOutputRowMaxCount();
         int GetOutputPage();
@@ -18,5 +19,10 @@ namespace SOLID
         void AddDataGridViewRow_GPA();
         void OutputBySetSelectedIndex(int index);
         void DelDataGridViewRows();
+        void Set_label_PageNumber(int page);
+        void SetPrevButtonNotActive();
+        void SetNextButtonNotActive();
+        void SetPrevButtonActive();
+        void SetNextButtonActive();
     }
 }
