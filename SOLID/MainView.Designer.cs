@@ -47,6 +47,8 @@
             this.toolStripButton_EditRecord = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton_DeleteRecord = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
+            this.OutputBy = new System.Windows.Forms.ToolStripComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.DataGridView_GPA)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -66,7 +68,9 @@
             this.GPA});
             this.DataGridView_GPA.Dock = System.Windows.Forms.DockStyle.Fill;
             this.DataGridView_GPA.Location = new System.Drawing.Point(0, 0);
+            this.DataGridView_GPA.MultiSelect = false;
             this.DataGridView_GPA.Name = "DataGridView_GPA";
+            this.DataGridView_GPA.ReadOnly = true;
             this.DataGridView_GPA.RowHeadersWidth = 51;
             this.DataGridView_GPA.RowTemplate.Height = 24;
             this.DataGridView_GPA.Size = new System.Drawing.Size(1119, 525);
@@ -178,10 +182,12 @@
             this.toolStripButton_AddRecord,
             this.toolStripButton_EditRecord,
             this.toolStripButton_DeleteRecord,
-            this.toolStripSeparator1});
+            this.toolStripSeparator1,
+            this.toolStripLabel1,
+            this.OutputBy});
             this.toolStrip1.Location = new System.Drawing.Point(0, 28);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(1143, 27);
+            this.toolStrip1.Size = new System.Drawing.Size(1143, 28);
             this.toolStrip1.TabIndex = 6;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -191,7 +197,7 @@
             this.toolStripButton_AddRecord.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton_AddRecord.Image")));
             this.toolStripButton_AddRecord.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton_AddRecord.Name = "toolStripButton_AddRecord";
-            this.toolStripButton_AddRecord.Size = new System.Drawing.Size(29, 24);
+            this.toolStripButton_AddRecord.Size = new System.Drawing.Size(29, 25);
             this.toolStripButton_AddRecord.Text = "Добавить запись";
             // 
             // toolStripButton_EditRecord
@@ -200,7 +206,7 @@
             this.toolStripButton_EditRecord.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton_EditRecord.Image")));
             this.toolStripButton_EditRecord.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton_EditRecord.Name = "toolStripButton_EditRecord";
-            this.toolStripButton_EditRecord.Size = new System.Drawing.Size(29, 24);
+            this.toolStripButton_EditRecord.Size = new System.Drawing.Size(29, 25);
             this.toolStripButton_EditRecord.Text = "Редактировать запись";
             // 
             // toolStripButton_DeleteRecord
@@ -209,13 +215,30 @@
             this.toolStripButton_DeleteRecord.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton_DeleteRecord.Image")));
             this.toolStripButton_DeleteRecord.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton_DeleteRecord.Name = "toolStripButton_DeleteRecord";
-            this.toolStripButton_DeleteRecord.Size = new System.Drawing.Size(29, 24);
+            this.toolStripButton_DeleteRecord.Size = new System.Drawing.Size(29, 25);
             this.toolStripButton_DeleteRecord.Text = "Удалить запись";
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 27);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 28);
+            // 
+            // toolStripLabel1
+            // 
+            this.toolStripLabel1.Name = "toolStripLabel1";
+            this.toolStripLabel1.Size = new System.Drawing.Size(102, 25);
+            this.toolStripLabel1.Text = "Выводить по:";
+            // 
+            // OutputBy
+            // 
+            this.OutputBy.AutoCompleteCustomSource.AddRange(new string[] {
+            "20",
+            "30"});
+            this.OutputBy.AutoSize = false;
+            this.OutputBy.Name = "OutputBy";
+            this.OutputBy.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.OutputBy.Size = new System.Drawing.Size(50, 28);
+            this.OutputBy.SelectedIndexChanged += new System.EventHandler(this.OutputBy_SelectedIndexChanged);
             // 
             // MainView
             // 
@@ -229,7 +252,6 @@
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "MainView";
             this.Text = "Вузы";
-            this.Load += new System.EventHandler(this.MainView_Load);
             ((System.ComponentModel.ISupportInitialize)(this.DataGridView_GPA)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
@@ -262,6 +284,8 @@
         private System.Windows.Forms.ToolStripButton toolStripButton_DeleteRecord;
         private System.Windows.Forms.ToolStripButton toolStripButton_EditRecord;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
+        private System.Windows.Forms.ToolStripLabel toolStripLabel1;
+        private System.Windows.Forms.ToolStripComboBox OutputBy;
     }
 }
 

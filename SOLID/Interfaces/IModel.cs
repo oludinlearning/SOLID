@@ -12,5 +12,6 @@ namespace SOLID
         GPA GetGPA(int id);
         void SetGPA(int id, GPA gpa);
         void DeleteGPA(int id);
+        int Get_DBRecordCount();
     }
 }
