@@ -59,7 +59,13 @@ namespace SOLID
                 IMainView.AddDataGridViewRow_GPA();
             }
         }
-         
+
+        void SetLanguage(string language)
+        {
+            //System.Windows.Forms.MessageBox.Show(language);
+            IMainView.SetLanguage(language);
+        }
+
         public Presenter(IMainView _IView, IModel _IModel)
         {
             IMainView = _IView;
@@ -70,6 +76,8 @@ namespace SOLID
             IMainView.onRowCountChanged += ShowDataGridView_GPA;
             IMainView.onPageChanged += ShowDataGridView_GPA;
             IMainView.OutputBySetSelectedIndex(0);
+            IMainView.onLangaugeChanged += SetLanguage;
+            IMainView.SettoolStripComboBox_Language_SelectedIndex(0);
             //ShowDataGridView_GPA(page, rowcount);
         }
     }

@@ -12,6 +12,7 @@ namespace SOLID
         //void ShowDataGridView_GPA(int page, int rowcount);
         event MainView.RowCountChanged onRowCountChanged;
         event MainView.PrevNextClicked onPageChanged;
+        event MainView.LanguageChanged onLangaugeChanged;
         void SetDataGridViewRow_GPA(int rownumber, GPA gpa);
         int GetOutputRowMaxCount();
         int GetOutputPage();
@@ -24,5 +25,7 @@ namespace SOLID
         void SetNextButtonNotActive();
         void SetPrevButtonActive();
         void SetNextButtonActive();
+        void SettoolStripComboBox_Language_SelectedIndex(int index);
+        void SetLanguage(string language);
     }
 }

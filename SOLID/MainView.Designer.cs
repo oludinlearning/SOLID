@@ -30,6 +30,12 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainView));
             this.DataGridView_GPA = new System.Windows.Forms.DataGridView();
+            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.University = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Faculty = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.StudentFullName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Subject = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.GPA = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.FileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.EditToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -42,16 +48,14 @@
             this.toolStripButton_EditRecord = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton_DeleteRecord = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
+            this.toolStripLabel_OutputBy = new System.Windows.Forms.ToolStripLabel();
             this.OutputBy = new System.Windows.Forms.ToolStripComboBox();
             this.label_Page = new System.Windows.Forms.Label();
             this.label_PageNumber = new System.Windows.Forms.Label();
-            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.University = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Faculty = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.StudentFullName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Subject = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.GPA = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.toolStripLabel_Language = new System.Windows.Forms.ToolStripLabel();
+            this.toolStripComboBox_Language = new System.Windows.Forms.ToolStripComboBox();
+            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             ((System.ComponentModel.ISupportInitialize)(this.DataGridView_GPA)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -79,6 +83,48 @@
             this.DataGridView_GPA.RowTemplate.Height = 24;
             this.DataGridView_GPA.Size = new System.Drawing.Size(1119, 525);
             this.DataGridView_GPA.TabIndex = 0;
+            // 
+            // ID
+            // 
+            this.ID.HeaderText = "ID";
+            this.ID.MinimumWidth = 6;
+            this.ID.Name = "ID";
+            this.ID.ReadOnly = true;
+            // 
+            // University
+            // 
+            this.University.HeaderText = "Вуз";
+            this.University.MinimumWidth = 6;
+            this.University.Name = "University";
+            this.University.ReadOnly = true;
+            // 
+            // Faculty
+            // 
+            this.Faculty.HeaderText = "Факультет";
+            this.Faculty.MinimumWidth = 6;
+            this.Faculty.Name = "Faculty";
+            this.Faculty.ReadOnly = true;
+            // 
+            // StudentFullName
+            // 
+            this.StudentFullName.HeaderText = "ФИО студента";
+            this.StudentFullName.MinimumWidth = 6;
+            this.StudentFullName.Name = "StudentFullName";
+            this.StudentFullName.ReadOnly = true;
+            // 
+            // Subject
+            // 
+            this.Subject.HeaderText = "Предмет";
+            this.Subject.MinimumWidth = 6;
+            this.Subject.Name = "Subject";
+            this.Subject.ReadOnly = true;
+            // 
+            // GPA
+            // 
+            this.GPA.HeaderText = "Средняя оценка";
+            this.GPA.MinimumWidth = 6;
+            this.GPA.Name = "GPA";
+            this.GPA.ReadOnly = true;
             // 
             // menuStrip1
             // 
@@ -154,8 +200,12 @@
             this.toolStripButton_EditRecord,
             this.toolStripButton_DeleteRecord,
             this.toolStripSeparator1,
-            this.toolStripLabel1,
-            this.OutputBy});
+            this.toolStripLabel_OutputBy,
+            this.OutputBy,
+            this.toolStripSeparator2,
+            this.toolStripLabel_Language,
+            this.toolStripComboBox_Language,
+            this.toolStripSeparator3});
             this.toolStrip1.Location = new System.Drawing.Point(0, 28);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(1143, 28);
@@ -194,11 +244,11 @@
             this.toolStripSeparator1.Name = "toolStripSeparator1";
             this.toolStripSeparator1.Size = new System.Drawing.Size(6, 28);
             // 
-            // toolStripLabel1
+            // toolStripLabel_OutputBy
             // 
-            this.toolStripLabel1.Name = "toolStripLabel1";
-            this.toolStripLabel1.Size = new System.Drawing.Size(102, 25);
-            this.toolStripLabel1.Text = "Выводить по:";
+            this.toolStripLabel_OutputBy.Name = "toolStripLabel_OutputBy";
+            this.toolStripLabel_OutputBy.Size = new System.Drawing.Size(102, 25);
+            this.toolStripLabel_OutputBy.Text = "Выводить по:";
             // 
             // OutputBy
             // 
@@ -229,47 +279,27 @@
             this.label_PageNumber.TabIndex = 8;
             this.label_PageNumber.Text = "1";
             // 
-            // ID
+            // toolStripLabel_Language
             // 
-            this.ID.HeaderText = "ID";
-            this.ID.MinimumWidth = 6;
-            this.ID.Name = "ID";
-            this.ID.ReadOnly = true;
+            this.toolStripLabel_Language.Name = "toolStripLabel_Language";
+            this.toolStripLabel_Language.Size = new System.Drawing.Size(43, 25);
+            this.toolStripLabel_Language.Text = "Язык";
             // 
-            // University
+            // toolStripComboBox_Language
             // 
-            this.University.HeaderText = "Вуз";
-            this.University.MinimumWidth = 6;
-            this.University.Name = "University";
-            this.University.ReadOnly = true;
+            this.toolStripComboBox_Language.Name = "toolStripComboBox_Language";
+            this.toolStripComboBox_Language.Size = new System.Drawing.Size(121, 28);
+            this.toolStripComboBox_Language.SelectedIndexChanged += new System.EventHandler(this.ToolStripComboBox_Language_SelectedIndexChanged);
             // 
-            // Faculty
+            // toolStripSeparator2
             // 
-            this.Faculty.HeaderText = "Факультет";
-            this.Faculty.MinimumWidth = 6;
-            this.Faculty.Name = "Faculty";
-            this.Faculty.ReadOnly = true;
+            this.toolStripSeparator2.Name = "toolStripSeparator2";
+            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 28);
             // 
-            // StudentFullName
+            // toolStripSeparator3
             // 
-            this.StudentFullName.HeaderText = "ФИО студента";
-            this.StudentFullName.MinimumWidth = 6;
-            this.StudentFullName.Name = "StudentFullName";
-            this.StudentFullName.ReadOnly = true;
-            // 
-            // Subject
-            // 
-            this.Subject.HeaderText = "Предмет";
-            this.Subject.MinimumWidth = 6;
-            this.Subject.Name = "Subject";
-            this.Subject.ReadOnly = true;
-            // 
-            // GPA
-            // 
-            this.GPA.HeaderText = "Средняя оценка";
-            this.GPA.MinimumWidth = 6;
-            this.GPA.Name = "GPA";
-            this.GPA.ReadOnly = true;
+            this.toolStripSeparator3.Name = "toolStripSeparator3";
+            this.toolStripSeparator3.Size = new System.Drawing.Size(6, 28);
             // 
             // MainView
             // 
@@ -312,7 +342,7 @@
         private System.Windows.Forms.ToolStripButton toolStripButton_DeleteRecord;
         private System.Windows.Forms.ToolStripButton toolStripButton_EditRecord;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
-        private System.Windows.Forms.ToolStripLabel toolStripLabel1;
+        private System.Windows.Forms.ToolStripLabel toolStripLabel_OutputBy;
         private System.Windows.Forms.ToolStripComboBox OutputBy;
         private System.Windows.Forms.Label label_Page;
         private System.Windows.Forms.Label label_PageNumber;
@@ -322,6 +352,10 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn StudentFullName;
         private System.Windows.Forms.DataGridViewTextBoxColumn Subject;
         private System.Windows.Forms.DataGridViewTextBoxColumn GPA;
+        private System.Windows.Forms.ToolStripLabel toolStripLabel_Language;
+        private System.Windows.Forms.ToolStripComboBox toolStripComboBox_Language;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
     }
 }
 

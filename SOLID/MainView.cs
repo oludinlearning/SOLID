@@ -12,6 +12,9 @@ namespace SOLID
         public delegate void PrevNextClicked(int page, int rowcount);
         public event PrevNextClicked onPageChanged;
 
+        public delegate void LanguageChanged(string language);
+        public event LanguageChanged onLangaugeChanged;
+
         public readonly string[] outputbyselectrownumber = { "5", "10", "15", "20" };
 
         protected int RowMaxCount { get; set; }
@@ -43,6 +46,10 @@ namespace SOLID
         {
             OutputBy.SelectedIndex = index;
         }
+
+        public void SettoolStripComboBox_Language_SelectedIndex(int index)
+        {
+            toolStripComboBox_Language.SelectedIndex = index;        }
         public void SetDataGridViewRow_GPA(int rownumber, GPA gpa)
         {
             this.DataGridView_GPA.Rows[rownumber].Cells["ID"].Value = gpa.ID;
@@ -56,11 +63,41 @@ namespace SOLID
         public void Set_label_PageNumber(int page) {
             label_PageNumber.Text = page.ToString();
         }
+
+        public void SetLanguage(string language)
+        {
+            string lang;
+            if(language == "English")
+            {
+                lang = "ru-en";
+                UI_strings.SetLanguage(lang);
+            }
+            else if(language == "Русский")
+            {
+                UI_strings.SetDefaultLanguage();                
+            }
+            SetFormStrings();
+        }
+        public void SetFormStrings()
+        {
+            Text = UI_strings.FormName;
+            FileToolStripMenuItem.Text = UI_strings.MenuFile;
+            EditToolStripMenuItem.Text = UI_strings.MenuEdit;
+            toolStripLabel_OutputBy.Text = UI_strings.OutputBy;
+            toolStripLabel_Language.Text = UI_strings.Language;
+            label_Page.Text = UI_strings.Page;
+            button_Next.Text = UI_strings.ButtonNext;
+            button_Previous.Text = UI_strings.ButtonPrev;
+        }
         public MainView()
         {
             InitializeComponent();
             OutputBy.Items.AddRange(outputbyselectrownumber);
             RowMaxCount = Convert.ToInt32(outputbyselectrownumber[0]);
+            toolStripComboBox_Language.Items.AddRange(UI_strings.language);
+
+            SetFormStrings();
+
             //OutputBy.SelectedIndex = 0;
             //RowMaxCount = Convert.ToInt32(OutputBy.Items[OutputBy.SelectedIndex]);
         }
@@ -71,6 +108,8 @@ namespace SOLID
             Page = 1;
             onRowCountChanged(Page, RowMaxCount);
         }
+
+
 
         #region Обработка кнопок "Следующая" и "Предыдущая"
         public void SetNextButtonNotActive()
@@ -105,5 +144,10 @@ namespace SOLID
             onPageChanged(--Page, RowMaxCount);
         }
         #endregion
+
+        private void ToolStripComboBox_Language_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            onLangaugeChanged(toolStripComboBox_Language.Text);
+        }
     }
 }
