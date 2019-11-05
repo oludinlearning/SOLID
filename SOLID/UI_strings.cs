@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SOLID
 {
-    public class UI_strings
+    public class UI_strings : IUIStrings
     {
         private readonly static string _FormName = "Вузы";
         private readonly static string _ButtonNext = "Следующая";
@@ -16,17 +16,19 @@ namespace SOLID
         private readonly static string _OutputBy = "Выводить по";
         private readonly static string _Language = "Язык";
         private readonly static string _Page = "Страница";
-        public readonly static string[] language = { "Русский", "English" };
+        public string[] language { get; set; } = { "Русский", "English" };
 
-        public static string FormName = _FormName;
-        public static string ButtonNext = _ButtonNext;
-        public static string ButtonPrev = _ButtonPrev;
-        public static string MenuFile = _MenuFile;
-        public static string MenuEdit = _MenuEdit;
-        public static string OutputBy = _OutputBy;
-        public static string Language = _Language;
-        public static string Page = _Page;
-        public static void SetDefaultLanguage()
+        public string FormName { get; set; } = _FormName;
+        public string ButtonNext { get; set; } = _ButtonNext;
+        public string ButtonPrev { get; set; } = _ButtonPrev;
+        public string MenuFile { get; set; } = _MenuFile;
+        public string MenuEdit { get; set; } = _MenuEdit;
+        public string OutputBy { get; set; } = _OutputBy;
+        public string Language { get; set; } = _Language;
+        public string Page { get; set; } = _Page;
+
+        IYandexTranslator IYandexTranslator = new YandexTranslator();
+        public void SetDefaultLanguage()
         {
             FormName = _FormName;
             ButtonNext = _ButtonNext;
@@ -38,17 +40,16 @@ namespace SOLID
             Page = _Page;
         }
 
-        public static void SetLanguage(string language)
+        public void SetLanguage(string language)
         {
-            YandexTranslator yt = new YandexTranslator();
-            FormName = yt.Translate(_FormName, language);
-            ButtonNext = yt.Translate(_ButtonNext, language);
-            ButtonPrev = yt.Translate(_ButtonPrev, language);
-            MenuFile = yt.Translate(_MenuFile, language);
-            MenuEdit = yt.Translate(_MenuEdit, language);
-            OutputBy = yt.Translate(_OutputBy, language);
-            Language = yt.Translate(_Language, language);
-            Page = yt.Translate(_Page, language);
+            FormName = IYandexTranslator.Translate(_FormName, language);
+            ButtonNext = IYandexTranslator.Translate(_ButtonNext, language);
+            ButtonPrev = IYandexTranslator.Translate(_ButtonPrev, language);
+            MenuFile = IYandexTranslator.Translate(_MenuFile, language);
+            MenuEdit = IYandexTranslator.Translate(_MenuEdit, language);
+            OutputBy = IYandexTranslator.Translate(_OutputBy, language);
+            Language = IYandexTranslator.Translate(_Language, language);
+            Page = IYandexTranslator.Translate(_Page, language);
         }
     }
 }

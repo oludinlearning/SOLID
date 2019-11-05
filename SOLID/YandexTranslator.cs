@@ -10,7 +10,7 @@ using Newtonsoft.Json;
 
 namespace SOLID
 {
-    public class YandexTranslator
+    public class YandexTranslator : IYandexTranslator
     {
         public static string key = "trnsl.1.1.20191103T222643Z.0c6fd91e8e01b50f.6876629e7b9f9f6d19e27a232137641f5391a747";
         //trnsl.1.1.20191103T222643Z.0c6fd91e8e01b50f.6876629e7b9f9f6d19e27a232137641f5391a747

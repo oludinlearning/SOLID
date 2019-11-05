@@ -50,12 +50,12 @@
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripLabel_OutputBy = new System.Windows.Forms.ToolStripLabel();
             this.OutputBy = new System.Windows.Forms.ToolStripComboBox();
-            this.label_Page = new System.Windows.Forms.Label();
-            this.label_PageNumber = new System.Windows.Forms.Label();
+            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripLabel_Language = new System.Windows.Forms.ToolStripLabel();
             this.toolStripComboBox_Language = new System.Windows.Forms.ToolStripComboBox();
-            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
+            this.label_Page = new System.Windows.Forms.Label();
+            this.label_PageNumber = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.DataGridView_GPA)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -261,23 +261,10 @@
             this.OutputBy.Size = new System.Drawing.Size(50, 28);
             this.OutputBy.SelectedIndexChanged += new System.EventHandler(this.OutputBy_SelectedIndexChanged);
             // 
-            // label_Page
+            // toolStripSeparator2
             // 
-            this.label_Page.AutoSize = true;
-            this.label_Page.Location = new System.Drawing.Point(12, 607);
-            this.label_Page.Name = "label_Page";
-            this.label_Page.Size = new System.Drawing.Size(76, 17);
-            this.label_Page.TabIndex = 7;
-            this.label_Page.Text = "Страница ";
-            // 
-            // label_PageNumber
-            // 
-            this.label_PageNumber.AutoSize = true;
-            this.label_PageNumber.Location = new System.Drawing.Point(95, 607);
-            this.label_PageNumber.Name = "label_PageNumber";
-            this.label_PageNumber.Size = new System.Drawing.Size(16, 17);
-            this.label_PageNumber.TabIndex = 8;
-            this.label_PageNumber.Text = "1";
+            this.toolStripSeparator2.Name = "toolStripSeparator2";
+            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 28);
             // 
             // toolStripLabel_Language
             // 
@@ -291,15 +278,30 @@
             this.toolStripComboBox_Language.Size = new System.Drawing.Size(121, 28);
             this.toolStripComboBox_Language.SelectedIndexChanged += new System.EventHandler(this.ToolStripComboBox_Language_SelectedIndexChanged);
             // 
-            // toolStripSeparator2
-            // 
-            this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 28);
-            // 
             // toolStripSeparator3
             // 
             this.toolStripSeparator3.Name = "toolStripSeparator3";
             this.toolStripSeparator3.Size = new System.Drawing.Size(6, 28);
+            // 
+            // label_Page
+            // 
+            this.label_Page.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.label_Page.AutoSize = true;
+            this.label_Page.Location = new System.Drawing.Point(12, 607);
+            this.label_Page.Name = "label_Page";
+            this.label_Page.Size = new System.Drawing.Size(76, 17);
+            this.label_Page.TabIndex = 7;
+            this.label_Page.Text = "Страница ";
+            // 
+            // label_PageNumber
+            // 
+            this.label_PageNumber.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.label_PageNumber.AutoSize = true;
+            this.label_PageNumber.Location = new System.Drawing.Point(95, 607);
+            this.label_PageNumber.Name = "label_PageNumber";
+            this.label_PageNumber.Size = new System.Drawing.Size(16, 17);
+            this.label_PageNumber.TabIndex = 8;
+            this.label_PageNumber.Text = "1";
             // 
             // MainView
             // 

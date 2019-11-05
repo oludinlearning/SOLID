@@ -16,6 +16,9 @@ namespace SOLID
         public event LanguageChanged onLangaugeChanged;
 
         public readonly string[] outputbyselectrownumber = { "5", "10", "15", "20" };
+        IUIStrings IUIstrings;
+
+
 
         protected int RowMaxCount { get; set; }
         public int GetOutputRowMaxCount()
@@ -70,32 +73,32 @@ namespace SOLID
             if(language == "English")
             {
                 lang = "ru-en";
-                UI_strings.SetLanguage(lang);
+                IUIstrings.SetLanguage(lang);
             }
             else if(language == "Русский")
             {
-                UI_strings.SetDefaultLanguage();                
+                IUIstrings.SetDefaultLanguage();                
             }
             SetFormStrings();
         }
         public void SetFormStrings()
         {
-            Text = UI_strings.FormName;
-            FileToolStripMenuItem.Text = UI_strings.MenuFile;
-            EditToolStripMenuItem.Text = UI_strings.MenuEdit;
-            toolStripLabel_OutputBy.Text = UI_strings.OutputBy;
-            toolStripLabel_Language.Text = UI_strings.Language;
-            label_Page.Text = UI_strings.Page;
-            button_Next.Text = UI_strings.ButtonNext;
-            button_Previous.Text = UI_strings.ButtonPrev;
+            Text = IUIstrings.FormName;
+            FileToolStripMenuItem.Text = IUIstrings.MenuFile;
+            EditToolStripMenuItem.Text = IUIstrings.MenuEdit;
+            toolStripLabel_OutputBy.Text = IUIstrings.OutputBy;
+            toolStripLabel_Language.Text = IUIstrings.Language;
+            label_Page.Text = IUIstrings.Page;
+            button_Next.Text = IUIstrings.ButtonNext;
+            button_Previous.Text = IUIstrings.ButtonPrev;
         }
         public MainView()
         {
             InitializeComponent();
+            IUIstrings = new UI_strings();
             OutputBy.Items.AddRange(outputbyselectrownumber);
             RowMaxCount = Convert.ToInt32(outputbyselectrownumber[0]);
-            toolStripComboBox_Language.Items.AddRange(UI_strings.language);
-
+            toolStripComboBox_Language.Items.AddRange(IUIstrings.language);
             SetFormStrings();
 
             //OutputBy.SelectedIndex = 0;
