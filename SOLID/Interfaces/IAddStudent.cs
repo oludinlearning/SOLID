@@ -8,6 +8,6 @@ namespace SOLID.Interfaces
 {
     interface IAddStudent
     {
-        void AddStudents(string connectionString, List<List<object>> listStudent);
+        void AddStudents(string connectionString, IStudent students);
     }
 }
