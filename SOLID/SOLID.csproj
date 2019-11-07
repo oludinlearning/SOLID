@@ -64,6 +64,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Entities\Conditions.cs" />
     <Compile Include="Entities\Facult.cs" />
     <Compile Include="Entities\Group.cs" />
     <Compile Include="Entities\Specialty.cs" />

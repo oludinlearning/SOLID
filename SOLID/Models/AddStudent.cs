@@ -15,7 +15,6 @@ namespace SOLID.Models
         public void AddStudents(string connectionString, IStudent students)
         {
             DataContext db = new DataContext(connectionString);
-            // добавляем его в таблицу Users
             db.GetTable<IStudent>().InsertOnSubmit(students);
             db.SubmitChanges();
         }
