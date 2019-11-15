@@ -16,7 +16,7 @@ namespace SOLID
         private readonly static string _OutputBy = "Выводить по";
         private readonly static string _Language = "Язык";
         private readonly static string _Page = "Страница";
-        public string[] language { get; set; } = { "Русский", "English" };
+        public string[] language { get; set; } = { "Русский", "English", "Spanish" };
 
         public string FormName { get; set; } = _FormName;
         public string ButtonNext { get; set; } = _ButtonNext;

@@ -57,7 +57,7 @@
     <Compile Include="Interfaces\IModel.cs" />
     <Compile Include="Interfaces\IMainView.cs" />
     <Compile Include="Interfaces\IUIStrings.cs" />
-    <Compile Include="IYandexTranslator.cs" />
+    <Compile Include="Interfaces\IYandexTranslator.cs" />
     <Compile Include="MainView.cs">
       <SubType>Form</SubType>
     </Compile>
