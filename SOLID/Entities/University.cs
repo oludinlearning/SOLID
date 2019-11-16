@@ -3,12 +3,17 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using SOLID.Interfaces;
+using System.Data.Linq.Mapping;
 
 namespace SOLID.Entities
 {
-    public class University
+    [Table(Name ="University")]
+    class University : IUniversity
     {
-        protected string name;
-        public string Name { get { return name; } set { name = value; } }
+        [Column(IsPrimaryKey =true,IsDbGenerated =true,Name ="IdUniver")]
+        public int IdUniver { get; set; }
+        [Column(Name ="NameUniver")]
+        public string NameUniver { get; set; }
     }
 }

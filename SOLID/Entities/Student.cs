@@ -3,29 +3,32 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using SOLID.Interfaces;
+using System.Data.Linq.Mapping;
+using System.Data.Linq;
 
 namespace SOLID.Entities
 {
-    public class Student
+    [Table(Name ="Student")]
+    class Student : IStudent
     {
-        protected string name;
-        public string Name { get { return name; } set { name = value; } }
-
-        protected string surname;
-        public string Surname { get { return surname; } set { surname = value; } }
-
-        protected string patronimic;
-        public string Patronimic { get { return patronimic; } set { patronimic = value; } }
-
-        protected Faculty faculty;
-        public Faculty Faculty { get { return faculty; } set { faculty = value; } }
-
-        public string GetStudentFullName()
+        [Column(IsPrimaryKey =true, Name ="IdStudent", IsDbGenerated =true)]
+        public int IdStudent { get; set; }
+        [Column(Name ="NameStudent")]
+        public string NameStudent { get; set; }
+        [Column(Name ="YearBirth")]
+        public DateTime YearBeth { get; set; }
+        [Column(Name ="RatingUSE")]
+        public int RatingUse { get; set; }
+        [Column]
+        public int IdGroup { get; set; }
+        private EntityRef<IGroup> _Group;
+        [Association(Storage ="_Group",ThisKey ="IdGroup")]
+        public IGroup group
         {
-            string fullname = Surname + ' ' + Name + ' ' + Patronimic;
-            return fullname;
+            get { return this._Group.Entity; }
+            set { this._Group.Entity = value; }
         }
-        //protected University university;
-        //public University University { get { return university; } set { university = value; } }
+
     }
 }
