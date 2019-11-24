@@ -56,6 +56,7 @@
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.label_Page = new System.Windows.Forms.Label();
             this.label_PageNumber = new System.Windows.Forms.Label();
+            this.label_DBMessage = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.DataGridView_GPA)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -303,11 +304,20 @@
             this.label_PageNumber.TabIndex = 8;
             this.label_PageNumber.Text = "1";
             // 
+            // label_DBMessage
+            // 
+            this.label_DBMessage.AutoSize = true;
+            this.label_DBMessage.Location = new System.Drawing.Point(273, 607);
+            this.label_DBMessage.Name = "label_DBMessage";
+            this.label_DBMessage.Size = new System.Drawing.Size(0, 17);
+            this.label_DBMessage.TabIndex = 9;
+            // 
             // MainView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1143, 630);
+            this.Controls.Add(this.label_DBMessage);
             this.Controls.Add(this.label_PageNumber);
             this.Controls.Add(this.label_Page);
             this.Controls.Add(this.toolStrip1);
@@ -358,6 +368,7 @@
         private System.Windows.Forms.ToolStripComboBox toolStripComboBox_Language;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
+        private System.Windows.Forms.Label label_DBMessage;
     }
 }
 

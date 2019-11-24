@@ -51,6 +51,7 @@
   <ItemGroup>
     <Compile Include="Entities\Faculty.cs" />
     <Compile Include="Entities\GPA.cs" />
+    <Compile Include="SQL\SQL.cs" />
     <Compile Include="Entities\Student.cs" />
     <Compile Include="Entities\Subject.cs" />
     <Compile Include="Entities\University.cs" />

@@ -13,7 +13,6 @@ namespace SOLID
     public class YandexTranslator : IYandexTranslator
     {
         public static string key = "trnsl.1.1.20191103T222643Z.0c6fd91e8e01b50f.6876629e7b9f9f6d19e27a232137641f5391a747";
-        //trnsl.1.1.20191103T222643Z.0c6fd91e8e01b50f.6876629e7b9f9f6d19e27a232137641f5391a747
 
 
 
@@ -40,7 +39,7 @@ namespace SOLID
 
                         s = "";
 
-                        foreach (string str in translation.text)
+                        foreach (string str in translation.Text)
                         {
                             s += str;
                         }
@@ -56,8 +55,8 @@ namespace SOLID
 
     class Translation
     {
-        public string code { get; set; }
-        public string lang { get; set; }
-        public string[] text { get; set; }
+        public string Code { get; set; }
+        public string Lang { get; set; }
+        public string[] Text { get; set; }
     }
 }

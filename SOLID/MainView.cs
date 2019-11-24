@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Data.SqlClient;
 using System.Windows.Forms;
 using SOLID.Entities;
 
@@ -18,14 +19,11 @@ namespace SOLID
         public readonly string[] outputbyselectrownumber = { "5", "10", "15", "20" };
         IUIStrings IUIstrings;
 
-
-
         protected int RowMaxCount { get; set; }
         public int GetOutputRowMaxCount()
         {
             return this.RowMaxCount;
         }
-
         private int Page { get; set; } = 1;
         public int GetOutputPage()
         {
@@ -35,12 +33,10 @@ namespace SOLID
         {
             Page = pagenumber;
         }
-
         public void AddDataGridViewRow_GPA()
         {
             DataGridView_GPA.Rows.Add();
         }
-
         public void DelDataGridViewRows()
         {
             DataGridView_GPA.Rows.Clear();
@@ -49,7 +45,6 @@ namespace SOLID
         {
             OutputBy.SelectedIndex = index;
         }
-
         public void SettoolStripComboBox_Language_SelectedIndex(int index)
         {
             toolStripComboBox_Language.SelectedIndex = index;        }
@@ -62,11 +57,9 @@ namespace SOLID
             this.DataGridView_GPA.Rows[rownumber].Cells["Subject"].Value = gpa.Subject.Name;
             this.DataGridView_GPA.Rows[rownumber].Cells["GPA"].Value = ((uint)gpa.GradePointAverage).ToString();
         }
-
         public void Set_label_PageNumber(int page) {
             label_PageNumber.Text = page.ToString();
         }
-
         public void SetLanguage(string language)
         {
             string lang;
@@ -101,18 +94,34 @@ namespace SOLID
             toolStripComboBox_Language.Items.AddRange(IUIstrings.language);
             SetFormStrings();
 
+
+
+
+            // Проверка подключения к базе данных
+            SqlConnection conn = SOLID.SQL.GetDBConnection();
+
+            try
+            {
+                label_DBMessage.Text = "Openning Connection ...";
+
+                conn.Open();
+
+                label_DBMessage.Text = "Connection successful!";
+            }
+            catch (Exception e)
+            {
+                label_DBMessage.Text = "Error: " + e.Message;
+            }
+
             //OutputBy.SelectedIndex = 0;
             //RowMaxCount = Convert.ToInt32(OutputBy.Items[OutputBy.SelectedIndex]);
         }
-
         private void OutputBy_SelectedIndexChanged(object sender, EventArgs e)
         {
             RowMaxCount = Convert.ToInt32(OutputBy.Items[OutputBy.SelectedIndex]);
             Page = 1;
             onRowCountChanged(Page, RowMaxCount);
         }
-
-
 
         #region Обработка кнопок "Следующая" и "Предыдущая"
         public void SetNextButtonNotActive()
@@ -152,5 +161,6 @@ namespace SOLID
         {
             onLangaugeChanged(toolStripComboBox_Language.Text);
         }
+
     }
 }
