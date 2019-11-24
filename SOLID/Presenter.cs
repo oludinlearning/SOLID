@@ -18,7 +18,7 @@ namespace SOLID
         void ShowDataGridView_GPA(int page, int rowcount)
         {
             IMainView.Set_label_PageNumber(page);
-            int DBRecordID = page * rowcount - rowcount;
+            int DBRecordID = page * rowcount - rowcount + 1;
             FillDataGridView_GPA(rowcount - 1);
             DBRecordCount = IModel.Get_DBRecordCount();
             int maxpage = Convert.ToInt32(Math.Ceiling((Convert.ToDouble(DBRecordCount)) / (Convert.ToDouble(rowcount))));// + 1;
