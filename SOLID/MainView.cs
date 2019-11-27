@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 using SOLID.Entities;
+using SOLID.Interfaces;
 
 namespace SOLID
 {
@@ -53,18 +54,18 @@ namespace SOLID
         public void SettoolStripComboBox_Language_SelectedIndex(int index)
         {
             toolStripComboBox_Language.SelectedIndex = index;        }
-        public void SetDataGridViewRow_GPA(int rownumber, GPA gpa)
+        public void SetDataGridViewRow_GPA(int rownumber, IGPA gpa)
         {
-            this.DataGridView_GPA.Rows[rownumber].Cells["ID"].Value = gpa.ID;
-            this.DataGridView_GPA.Rows[rownumber].Cells["University"].Value = gpa.Student.Faculty.University.Name;
-            this.DataGridView_GPA.Rows[rownumber].Cells["Faculty"].Value = gpa.Student.Faculty.Name;
-            this.DataGridView_GPA.Rows[rownumber].Cells["StudentFullName"].Value = gpa.Student.GetStudentFullName();
-            this.DataGridView_GPA.Rows[rownumber].Cells["Subject"].Value = gpa.Subject.Name;
-            this.DataGridView_GPA.Rows[rownumber].Cells["GPA"].Value = ((uint)gpa.GradePointAverage).ToString();
+            this.DataGridView_GPA.Rows[rownumber].Cells["ID"].Value = gpa.IdRecord;
+            this.DataGridView_GPA.Rows[rownumber].Cells["University"].Value = gpa.Student.Facult.University.NameUniver;
+            this.DataGridView_GPA.Rows[rownumber].Cells["Faculty"].Value = gpa.Student.Facult.NameFacult;
+            this.DataGridView_GPA.Rows[rownumber].Cells["StudentFullName"].Value = gpa.Student.NameStudent;
+            this.DataGridView_GPA.Rows[rownumber].Cells["Subject"].Value = gpa.Subject.NameSub;
+            this.DataGridView_GPA.Rows[rownumber].Cells["GPA"].Value = gpa.Gpa;
         }
 
         public void Set_label_PageNumber(int page) {
-            label_PageNumber.Text = page.ToString();
+            label_PageNumber.Text = (page+1).ToString();
         }
 
         public void SetLanguage(string language)
@@ -108,7 +109,7 @@ namespace SOLID
         private void OutputBy_SelectedIndexChanged(object sender, EventArgs e)
         {
             RowMaxCount = Convert.ToInt32(OutputBy.Items[OutputBy.SelectedIndex]);
-            Page = 1;
+            Page = 0;
             onRowCountChanged(Page, RowMaxCount);
         }
 

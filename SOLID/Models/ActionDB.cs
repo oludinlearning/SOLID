@@ -7,21 +7,26 @@ using System.Data.SqlClient;
 using System.Data;
 using System.Data.Linq;
 using SOLID.Interfaces;
+using System.Configuration;
+using SOLID.Entities;
 
 namespace SOLID.Models
 {
-    class ActionDB //: IActionDB
+    class ActionDB : IActionDB
     {
-        public void AddStudents(string connectionString, IStudent students)
+        public int Count { get; set; } = 0;
+        public void AddRecordofStudent(DataContext db, IGPA gpa)
         {
-            DataContext db = new DataContext(connectionString);
-            db.GetTable<IStudent>().InsertOnSubmit(students);
+            db.GetTable<IGPA>().InsertOnSubmit(gpa);
             db.SubmitChanges();
         }
-        public Table<IStudent> ReadStudent(string connectionString)
+        public void GetRecordofStudent(ref IQueryable<GPA> gpa, DataContext db, int pageNumber, int pageSize)
         {
-            DataContext db = new DataContext(connectionString);
-            return /*Table<IStudent> table1 =*/ db.GetTable<IStudent>();
+            Count = db.GetTable<GPA>().Count();
+            if (Count > pageNumber * pageSize)
+            {
+                gpa = db.GetTable<GPA>().Skip(pageNumber * pageSize).Take(pageSize);
+            }
         }
     }
 }

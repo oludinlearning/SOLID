@@ -3,16 +3,16 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using SOLID.Entities;
 
 namespace SOLID.Interfaces
 {
-    interface IStudent
+    public interface IStudent
     {
         int IdStudent { get; set; }
         string NameStudent { get; set; }
         DateTime YearBeth { get; set; }
-        int RatingUse { get; set; }
-        int IdGroup { get; set; }
-        IGroup group { get; set; }
+        int IdFacult { get; set; }
+        Facult Facult { get; set; }
     }
 }

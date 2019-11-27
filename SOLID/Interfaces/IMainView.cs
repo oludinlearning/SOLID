@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using SOLID.Entities;
+using SOLID.Interfaces;
 
 namespace SOLID
 {
@@ -13,7 +14,7 @@ namespace SOLID
         event MainView.RowCountChanged onRowCountChanged;
         event MainView.PrevNextClicked onPageChanged;
         event MainView.LanguageChanged onLangaugeChanged;
-        void SetDataGridViewRow_GPA(int rownumber, GPA gpa);
+        void SetDataGridViewRow_GPA(int rownumber, IGPA gpa);
         int GetOutputRowMaxCount();
         int GetOutputPage();
         void SetOutputByPage(int pagenumber);

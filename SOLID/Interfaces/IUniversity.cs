@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SOLID.Interfaces
 {
-    interface IUniversity
+    public interface IUniversity
     {
         int IdUniver { get; set; }
         string NameUniver { get; set; }

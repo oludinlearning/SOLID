@@ -11,3 +11,18 @@ C:\Users\Алексей\Documents\Visual Studio 2019\Projects\SOLID\SOLID\SOLID\
 C:\Users\Алексей\Documents\Visual Studio 2019\Projects\SOLID\SOLID\SOLID\bin\Debug\Newtonsoft.Json.dll
 C:\Users\Алексей\Documents\Visual Studio 2019\Projects\SOLID\SOLID\SOLID\bin\Debug\Newtonsoft.Json.xml
 C:\Users\Алексей\Documents\Visual Studio 2019\Projects\SOLID\SOLID\SOLID\obj\Debug\SOLID.csproj.CopyComplete
+D:\Git\SOLID\SOLID\obj\Debug\SOLID.csprojAssemblyReference.cache
+D:\Git\SOLID\SOLID\obj\Debug\SOLID.MainView.resources
+D:\Git\SOLID\SOLID\obj\Debug\SOLID.Properties.Resources.resources
+D:\Git\SOLID\SOLID\obj\Debug\SOLID.csproj.GenerateResource.cache
+D:\Git\SOLID\SOLID\obj\Debug\SOLID.csproj.CoreCompileInputs.cache
+D:\Git\SOLID\SOLID\obj\Debug\SOLID.exe
+D:\Git\SOLID\SOLID\obj\Debug\SOLID.pdb
+D:\Git\SOLID\SOLID\bin\Debug\AppData\University.mdf
+D:\Git\SOLID\SOLID\bin\Debug\AppData\University_log.ldf
+D:\Git\SOLID\SOLID\bin\Debug\SOLID.exe.config
+D:\Git\SOLID\SOLID\bin\Debug\SOLID.exe
+D:\Git\SOLID\SOLID\bin\Debug\SOLID.pdb
+D:\Git\SOLID\SOLID\bin\Debug\Newtonsoft.Json.dll
+D:\Git\SOLID\SOLID\bin\Debug\Newtonsoft.Json.xml
+D:\Git\SOLID\SOLID\obj\Debug\SOLID.csproj.CopyComplete

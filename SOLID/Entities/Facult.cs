@@ -10,7 +10,7 @@ using System.Data.Linq;
 namespace SOLID.Entities
 {
     [Table(Name ="Facult")]
-    class Facult : IFacult
+    public class Facult : IFacult
     {
         [Column(IsPrimaryKey = true, IsDbGenerated = true, Name ="IdFacult")]
         public int IdFacult { get; set; }
@@ -18,9 +18,9 @@ namespace SOLID.Entities
         public string NameFacult { get; set; }
         [Column]
         public int IdUniver { get; set; }
-        private EntityRef<IUniversity> _University;
+        private EntityRef<University> _University;
         [Association(Storage = "_University", ThisKey = "IdUniver")]
-        public IUniversity university
+        public University University
         {
             get { return this._University.Entity; }
             set { this._University.Entity = value; }

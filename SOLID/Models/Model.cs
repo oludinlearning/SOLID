@@ -1,37 +1,46 @@
 ﻿using System;
-using System.Data.SqlClient;
 using System.Collections.Generic;
+using System.Configuration;
+using System.Data.Linq;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Configuration;
+using SOLID.Entities;
 using SOLID.Interfaces;
-using System.Data.Linq.Mapping;
-using System.Data.Linq;
 using SOLID.Models;
 
 namespace SOLID
 {
     class Model : IModel
     {
-        string connectionString;
-        private ReadDB readDB;
-
+        IActionDB actionDb;
+        string connectionString = ConfigurationManager.ConnectionStrings["DefaultConnection"].ConnectionString;
+        DataContext db;
+        IQueryable<GPA> gpa;
         public Model()
         {
-            connectionString = ConfigurationManager.ConnectionStrings["DefaultConnection"].ConnectionString;
+            actionDb = new ActionDB();
+            db = new DataContext(connectionString);
+
+        }
+        public int Get_DBRecordCount()
+        {
+            return actionDb.Count;
+        }  
+        public IQueryable<GPA> GetGPA(int pageNumber, int pageSize)
+        {
+            actionDb.GetRecordofStudent(ref gpa, db, pageNumber, pageSize);
+            return gpa;
         }
 
-        public Model(ReadDB readDB)
+        public void DeleteGPA(int id)
         {
-            this.readDB = readDB;
+
         }
 
-        public Model(IReadDB db, out Table<IStudent> tabStud)
+        public void SetGPA(IGPA gpa)
         {
-            db.ReadStudent(connectionString,out Table<IStudent> tabS);
-            tabStud = tabS;
-
+            actionDb.AddRecordofStudent(db,gpa);
         }
     }
 }

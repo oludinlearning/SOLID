@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Linq;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using SOLID.Entities;
+using SOLID.Interfaces;
 
 namespace SOLID
 {
@@ -11,36 +13,35 @@ namespace SOLID
     {
         IModel IModel;
         IMainView IMainView;
-        GPA gpa = new GPA();
+        IQueryable<GPA> gpa;
         int DBRecordCount;
         
 
         void ShowDataGridView_GPA(int page, int rowcount)
         {
             IMainView.Set_label_PageNumber(page);
-            int DBRecordID = page * rowcount - rowcount;
             FillDataGridView_GPA(rowcount - 1);
+            gpa = IModel.GetGPA(page, rowcount);
             DBRecordCount = IModel.Get_DBRecordCount();
             int maxpage = Convert.ToInt32(Math.Ceiling((Convert.ToDouble(DBRecordCount)) / (Convert.ToDouble(rowcount))));// + 1;
             int maxrow = DBRecordCount % rowcount;
-            if (page != maxpage){ maxrow = rowcount; } else { if (maxrow == 0) { maxrow = rowcount; } }
-                for (int i = 0; i < maxrow; i++)
-                {
-                    gpa = IModel.GetGPA(DBRecordID);
-                    DBRecordID++;
-                    IMainView.SetDataGridViewRow_GPA(i, gpa);
-                }
-            if(page == 1 && page != maxpage)
+            int i = 0;
+            foreach(var quer in gpa)
+            {
+                IMainView.SetDataGridViewRow_GPA(i,quer);
+                i++;
+            }
+            if(page == 0 && page != maxpage)
             {
                 IMainView.SetNextButtonActive();
                 IMainView.SetPrevButtonNotActive();
             }
-            else if(page == 1 && page == maxpage)
+            else if(page == 0 && page == maxpage)
             {
                 IMainView.SetNextButtonNotActive();
                 IMainView.SetPrevButtonNotActive();
             }
-            else if(page != 1 && page == maxpage)
+            else if(page != 0 && page == maxpage)
             {
                 IMainView.SetNextButtonNotActive();
                 IMainView.SetPrevButtonActive();

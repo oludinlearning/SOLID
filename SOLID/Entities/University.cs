@@ -9,7 +9,7 @@ using System.Data.Linq.Mapping;
 namespace SOLID.Entities
 {
     [Table(Name ="University")]
-    class University : IUniversity
+    public class University : IUniversity
     {
         [Column(IsPrimaryKey =true,IsDbGenerated =true,Name ="IdUniver")]
         public int IdUniver { get; set; }

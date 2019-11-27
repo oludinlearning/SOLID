@@ -66,20 +66,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Entities\Conditions.cs" />
     <Compile Include="Entities\Facult.cs" />
     <Compile Include="Entities\GPA.cs" />
-    <Compile Include="Entities\Group.cs" />
-    <Compile Include="Entities\Specialty.cs" />
     <Compile Include="Entities\Student.cs" />
+    <Compile Include="Entities\Subject.cs" />
     <Compile Include="Entities\University.cs" />
     <Compile Include="Interfaces\IActionDB.cs" />
     <Compile Include="Interfaces\IFacult.cs" />
-    <Compile Include="Interfaces\IGroup.cs" />
+    <Compile Include="Interfaces\IGPA.cs" />
     <Compile Include="Interfaces\IModel.cs" />
     <Compile Include="Interfaces\IMainView.cs" />
-    <Compile Include="Interfaces\ISpecialty.cs" />
     <Compile Include="Interfaces\IStudent.cs" />
+    <Compile Include="Interfaces\ISubject.cs" />
     <Compile Include="Interfaces\IUIStrings.cs" />
     <Compile Include="Interfaces\IUniversity.cs" />
     <Compile Include="Interfaces\IYandexTranslator.cs" />
@@ -89,9 +87,8 @@
     <Compile Include="MainView.Designer.cs">
       <DependentUpon>MainView.cs</DependentUpon>
     </Compile>
-    <Compile Include="Model.cs" />
-    <Compile Include="Models\ActionDB.cs" />
     <Compile Include="Models\Model.cs" />
+    <Compile Include="Models\ActionDB.cs" />
     <Compile Include="Presenter.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

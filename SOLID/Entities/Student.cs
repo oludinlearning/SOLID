@@ -10,7 +10,7 @@ using System.Data.Linq;
 namespace SOLID.Entities
 {
     [Table(Name ="Student")]
-    class Student : IStudent
+    public class Student : IStudent
     {
         [Column(IsPrimaryKey =true, Name ="IdStudent", IsDbGenerated =true)]
         public int IdStudent { get; set; }
@@ -18,16 +18,14 @@ namespace SOLID.Entities
         public string NameStudent { get; set; }
         [Column(Name ="YearBirth")]
         public DateTime YearBeth { get; set; }
-        [Column(Name ="RatingUSE")]
-        public int RatingUse { get; set; }
         [Column]
-        public int IdGroup { get; set; }
-        private EntityRef<IGroup> _Group;
-        [Association(Storage ="_Group",ThisKey ="IdGroup")]
-        public IGroup group
+        public int IdFacult { get; set; }
+        private EntityRef<Facult> _Facult;
+        [Association(Storage = "_Facult", ThisKey = "IdFacult")]
+        public Facult Facult
         {
-            get { return this._Group.Entity; }
-            set { this._Group.Entity = value; }
+            get { return this._Facult.Entity; }
+            set { this._Facult.Entity = value; }
         }
 
     }
