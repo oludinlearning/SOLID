@@ -12,8 +12,9 @@ namespace SOLID.Interfaces
     interface IActionDB
     {
         int Count { get; set; }
-        void AddRecordofStudent(DataContext db, IGPA gpa);
+        void AddRecordofStudent(DataContext db, GPA gpa);
         void GetRecordofStudent(ref IQueryable<GPA> gpa, DataContext db, int pageNumber, int pageSize);
+        void DeleteRecordofStudent(int idRecord, DataContext db);
 
     }
 }

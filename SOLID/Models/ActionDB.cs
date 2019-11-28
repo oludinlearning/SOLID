@@ -15,9 +15,9 @@ namespace SOLID.Models
     class ActionDB : IActionDB
     {
         public int Count { get; set; } = 0;
-        public void AddRecordofStudent(DataContext db, IGPA gpa)
+        public void AddRecordofStudent(DataContext db, GPA gpa)
         {
-            db.GetTable<IGPA>().InsertOnSubmit(gpa);
+            db.GetTable<GPA>().InsertOnSubmit(gpa);
             db.SubmitChanges();
         }
         public void GetRecordofStudent(ref IQueryable<GPA> gpa, DataContext db, int pageNumber, int pageSize)
@@ -27,6 +27,15 @@ namespace SOLID.Models
             {
                 gpa = db.GetTable<GPA>().Skip(pageNumber * pageSize).Take(pageSize);
             }
+        }
+        public void DeleteRecordofStudent(int idRecord, DataContext db)
+        {
+            var rec = from order in db.GetTable<GPA>()
+                      where order.IdRecord == idRecord
+                      select order;
+            foreach(var gpa in rec)
+            db.GetTable<GPA>().DeleteOnSubmit(gpa);
+            db.SubmitChanges();
         }
     }
 }

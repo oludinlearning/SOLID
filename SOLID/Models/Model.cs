@@ -35,10 +35,10 @@ namespace SOLID
 
         public void DeleteGPA(int id)
         {
-
+            actionDb.DeleteRecordofStudent(id, db);
         }
 
-        public void SetGPA(IGPA gpa)
+        public void SetGPA(GPA gpa)
         {
             actionDb.AddRecordofStudent(db,gpa);
         }
