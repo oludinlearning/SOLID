@@ -11,7 +11,7 @@ namespace SOLID
 {
     interface IModel
     {
-        IQueryable<GPA> GetGPA(int pageNumber, int pageSize);
+        IQueryable<IGPA> GetGPA(int pageNumber, int pageSize);
         void SetGPA(GPA gpa);
         void DeleteGPA(int id);
         int Get_DBRecordCount();

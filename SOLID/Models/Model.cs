@@ -16,7 +16,7 @@ namespace SOLID
         IActionDB actionDb;
         string connectionString = ConfigurationManager.ConnectionStrings["DefaultConnection"].ConnectionString;
         DataContext db;
-        IQueryable<GPA> gpa;
+        IQueryable<IGPA> gpa;
         public Model()
         {
             actionDb = new ActionDB();
@@ -27,7 +27,7 @@ namespace SOLID
         {
             return actionDb.Count;
         }  
-        public IQueryable<GPA> GetGPA(int pageNumber, int pageSize)
+        public IQueryable<IGPA> GetGPA(int pageNumber, int pageSize)
         {
             actionDb.GetRecordofStudent(ref gpa, db, pageNumber, pageSize);
             return gpa;
@@ -38,7 +38,7 @@ namespace SOLID
             actionDb.DeleteRecordofStudent(id, db);
         }
 
-        public void SetGPA(GPA gpa)
+        public void SetGPA(IGPA gpa)
         {
             actionDb.AddRecordofStudent(db,gpa);
         }

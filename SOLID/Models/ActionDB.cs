@@ -20,7 +20,7 @@ namespace SOLID.Models
             db.GetTable<GPA>().InsertOnSubmit(gpa);
             db.SubmitChanges();
         }
-        public void GetRecordofStudent(ref IQueryable<GPA> gpa, DataContext db, int pageNumber, int pageSize)
+        public void GetRecordofStudent(ref IQueryable<IGPA> gpa, DataContext db, int pageNumber, int pageSize)
         {
             Count = db.GetTable<GPA>().Count();
             if (Count > pageNumber * pageSize)

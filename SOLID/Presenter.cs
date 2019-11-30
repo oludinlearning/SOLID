@@ -13,7 +13,7 @@ namespace SOLID
     {
         IModel IModel;
         IMainView IMainView;
-        IQueryable<GPA> gpa;
+        IQueryable<IGPA> gpa;
         int DBRecordCount;
         
 

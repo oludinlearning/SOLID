@@ -13,7 +13,7 @@ namespace SOLID.Interfaces
     {
         int Count { get; set; }
         void AddRecordofStudent(DataContext db, GPA gpa);
-        void GetRecordofStudent(ref IQueryable<GPA> gpa, DataContext db, int pageNumber, int pageSize);
+        void GetRecordofStudent(ref IQueryable<IGPA> gpa, DataContext db, int pageNumber, int pageSize);
         void DeleteRecordofStudent(int idRecord, DataContext db);
 
     }
